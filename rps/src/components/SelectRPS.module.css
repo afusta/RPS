@@ -1,0 +1,25 @@
+.selectorContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.selectorContainer2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selectorFirstRow {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin-bottom: -100px;
+  z-index: 1;
+}
+
+.selectorLastRow {
+  margin-top: -100px;
+  z-index: 1;
+}

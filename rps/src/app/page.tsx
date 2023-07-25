@@ -1,5 +1,8 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import SelectRPS from "@/components/SelectRPS";
+import RPSIcon from "@/components/RPSIcon";
+import { RPSType } from "@/utils/types";
 
 export default function Home() {
   return (
@@ -17,6 +20,8 @@ export default function Home() {
           <p className={styles.score}>12</p>
         </div>
       </div>
+
+      <SelectRPS></SelectRPS>
     </main>
   );
 }
