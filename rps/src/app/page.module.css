@@ -1,8 +1,12 @@
 .main {
   background: radial-gradient(at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   min-height: 100vh;
+}
+
+.paddedLayout {
   display: flex;
   flex-direction: column;
+  gap: 60px;
   padding: 10px 5%;
 }
 
@@ -42,8 +46,27 @@
   font-weight: 700;
 }
 
+.buttonBox {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 30px 30px 0;
+}
+
+.rulesButton {
+  background-color: transparent;
+  border: solid 2px hsl(217, 16%, 45%);
+  border-radius: 10px;
+  padding: 15px 50px;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
 @media (min-width: 1366px) {
-  .main {
+  .paddedLayout {
     padding: 10px 25%;
   }
 

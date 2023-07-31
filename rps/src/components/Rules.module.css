@@ -1,0 +1,33 @@
+.modalBackground {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalWindowBackground {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 400px;
+  border-radius: 15px;
+  padding: 40px 30px;
+}
+
+.modalUpperBox {
+  width: 100%;
+  display: flex;
+  color: hsl(229, 25%, 31%);
+  font-size: 32px;
+  font-weight: bold;
+  justify-content: space-between;
+}
