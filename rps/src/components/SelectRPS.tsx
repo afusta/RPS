@@ -1,20 +1,36 @@
-import React from "react";
-import rockImage from "../../public/images/icon-rock.svg";
-import paperImage from "../../public/images/icon-paper.svg";
-import scissorsImage from "../../public/images/icon-scissors.svg";
+import React, { useCallback } from "react";
 import Triangle from "../../public/images/bg-triangle.svg";
 import Image from "next/image";
 import selectorStyles from "./SelectRPS.module.css";
 import RPSIcon from "./RPSIcon";
 import { RPSType } from "@/utils/types";
 
-const SelectRPS: React.FC = () => {
+interface Props {
+  handlePlay: (type: RPSType) => void;
+}
+
+const SelectRPS: React.FC<Props> = ({ handlePlay }) => {
+  const handlePlayRock = useCallback(() => {
+    handlePlay(RPSType.ROCK);
+  }, [handlePlay]);
+
+  const handlePlayPaper = useCallback(() => {
+    handlePlay(RPSType.PAPER);
+  }, [handlePlay]);
+
+  const handlePlayScissor = useCallback(() => {
+    handlePlay(RPSType.SCISSORS);
+  }, [handlePlay]);
   return (
     <div className={selectorStyles.selectorContainer}>
       <div className={selectorStyles.selectorContainer2}>
         <div className={selectorStyles.selectorFirstRow}>
-          <RPSIcon type={RPSType.ROCK}></RPSIcon>
-          <RPSIcon type={RPSType.PAPER}></RPSIcon>
+          <div className={selectorStyles.RPSIconBox} onClick={handlePlayRock}>
+            <RPSIcon type={RPSType.ROCK}></RPSIcon>
+          </div>
+          <div className={selectorStyles.RPSIconBox} onClick={handlePlayPaper}>
+            <RPSIcon type={RPSType.PAPER}></RPSIcon>
+          </div>
         </div>
         <Image
           width={Triangle.width}
@@ -22,7 +38,10 @@ const SelectRPS: React.FC = () => {
           src={Triangle.src}
           alt="background triangle"
         ></Image>
-        <div className={selectorStyles.selectorLastRow}>
+        <div
+          onClick={handlePlayScissor}
+          className={`${selectorStyles.selectorLastRow} ${selectorStyles.RPSIconBox}`}
+        >
           <RPSIcon type={RPSType.SCISSORS}></RPSIcon>
         </div>
       </div>

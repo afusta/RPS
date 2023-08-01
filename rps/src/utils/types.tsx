@@ -3,3 +3,9 @@ export enum RPSType {
   PAPER = "PAPER",
   SCISSORS = "SCISSORS",
 }
+
+export enum RPSResult {
+  TIE = "TIE",
+  WIN = "YOU WIN",
+  LOSE = "YOU LOSE",
+}
